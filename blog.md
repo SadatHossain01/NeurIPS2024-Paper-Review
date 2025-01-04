@@ -62,7 +62,7 @@ Where $\alpha = 0.75$ balances between the current gradient and the previous upd
 
 ### Repair Operator
 
-A novel repair operator $ R{\Omega} $ projects examples back into the valid data space after each iteration, ensuring constraint satisfaction throughout the optimization process.
+A novel repair operator $ R_{\Omega} $ projects examples back into the valid data space after each iteration, ensuring constraint satisfaction throughout the optimization process.
 
 ---
 

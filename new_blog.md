@@ -34,26 +34,28 @@ CAPGD adaptively adjusts the step size based on optimization progress:
   - The maximum loss hasn’t improved since the last checkpoint.
 
 Mathematically:
-\[
-\eta_{k+1} =
+```math
+\eta^{k+1} =
 \begin{cases}
-\eta_k, & \text{if progress is good} \\
-\eta_k / 2, & \text{otherwise}.
+\eta^{k} & \text{if progress is good} \\
+\frac{\eta^{k}}{2} & \text{otherwise}
 \end{cases}
-\]
+```
 
 ### Momentum Integration
 Incorporates momentum for improved stability:
-\[
-z_{k+1} = P_S(x_k + \eta_k \nabla L'(x_k)),
-\]
-\[
-x_{k+1} = R_\Omega \big(P_S \big(x_k + \alpha(z_{k+1} - x_k) + (1-\alpha)(x_k - x_{k-1})\big)\big),
-\]
-where \(\alpha = 0.75\) balances the current gradient and previous updates.
+```math
+z^{k+1} = P_S\left( x^{k} + \eta^{k} \nabla L'x^{k} \right)
+```
+
+```math
+x^{k+1} = R_{\Omega}\left( P_S\left( x^{k} + \alpha \left( z^{k+1} - x^{k} \right) + (1-\alpha) \left( x^{k} - x^{k-1} \right) \right) \right)
+```
+
+where $\alpha = 0.75$ balances the current gradient and previous updates.
 
 ### Repair Operator
-A novel repair operator \(R_\Omega\) ensures constraint satisfaction by projecting examples back into the valid data space.
+A novel repair operator $R_{\Omega}$ ensures constraint satisfaction by projecting examples back into the valid data space.
 
 ---
 

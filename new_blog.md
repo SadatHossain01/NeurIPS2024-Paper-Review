@@ -65,18 +65,18 @@ CAPGD and CAA respect domain-specific constraints, preserving adversarial exampl
 
 ### Types of Constraints:
 1. **Immutability**: Certain features cannot be modified (e.g., “loan ID”).
-2. **Boundaries**: Features must remain within specific ranges (e.g., \(5000 \leq \text{Loan Amount} \leq 100000\)).
+2. **Boundaries**: Features must remain within specific ranges (e.g., $5000 \leq \text{Loan Amount} \leq 100000$).
 3. **Type**: Features retain their data type (e.g., categorical values remain categorical).
-4. **Feature Relationships**: Logical/mathematical relationships must be preserved (e.g., \(\text{Total Debt} \geq \text{Monthly Payments}\)).
+4. **Feature Relationships**: Logical/mathematical relationships must be preserved (e.g., $\text{Total Debt} \geq \text{Monthly Payments}$).
 
 ### Constraint Grammar
-\[
+```math
 \omega := \omega_1 \land \omega_2 \mid \omega_1 \lor \omega_2 \mid \psi_1 \geq \psi_2 \mid f \in \{\psi_1, \ldots, \psi_k\},
-\]
+```
 where:
-- \(\omega\): Constraint
-- \(\psi\): Numeric expression
-- \(f\): Feature
+- $\omega$: Constraint
+- $\psi$: Numeric expression
+- $f$: Feature
 
 ---
 
